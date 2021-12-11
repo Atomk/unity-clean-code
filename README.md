@@ -7,7 +7,7 @@ This guide will not cover everything there is to learn about clean code for Unit
 One of the most covered topics in this guide is naming conventions for C#. Keep in mind, however, that naming conventions are often tweaked **on purpose** by organizations for various reasons (Unity and Microsoft included). If you have a good reason to not follow them, do it! Just remember that if a project is using a different style convention, use it on the entire project.
 
 - [The Basics](#the-basics)
-- [Identation](#identation)
+- [Indentation](#indentation)
 - [Variables](#variables)
 - [Methods](#methods)
 - [Statements](#statements)
@@ -53,7 +53,7 @@ The first lines of a script are dedicated to "importing" the necessary code libr
 public class MyCustomScript 
 ```
 
-The script file we created defines a class (an abstraction of an object), that is public (accessible by other pieces of code), and with the name of the file you typed in. In this case, the class is called *MyCustomScript*. This is a **horrible** name! There is no way we can understand what this class does just by looking at its name (which should be your goal). Use meaninful names, like "PlayerHealth" or "Projectile", **always** in Pascal Case.
+The script file we created defines a class (an abstraction of an object), that is public (accessible by other pieces of code), and with the name of the file you typed in. In this case, the class is called *MyCustomScript*. This is a **horrible** name! There is no way we can understand what this class does just by looking at its name (which should be your goal). Use meaningful names, like "PlayerHealth" or "Projectile", **always** in Pascal Case.
 
 ```csharp
                             : MonoBehaviour {
@@ -70,16 +70,16 @@ The script file we created defines a class (an abstraction of an object), that i
 }
 ```
 
-Starting at the top (after public class MyCustomScript), we define what class (if any) our own class inherits from. In this case, it is Unity's MonoBehaviour. This is arguably the most important class in game development for Unity now, as it's what "marks" a class to be a component that can be attached to a GameObject. Inheriting from another class is not just marking it, it is what "enables you to create new classes that reuse, extend, and modify the behaviour that is defined in other classes". The methods Start and Update, for example, is something that Unity will only call during their predefined events if your class *is* a MonoBehaviour, which you will then extend the methods you need with the proper funcionality.
+Starting at the top (after public class MyCustomScript), we define what class (if any) our own class inherits from. In this case, it is Unity's MonoBehaviour. This is arguably the most important class in game development for Unity now, as it's what "marks" a class to be a component that can be attached to a GameObject. Inheriting from another class is not just marking it, it is what "enables you to create new classes that reuse, extend, and modify the behaviour that is defined in other classes". The methods Start and Update, for example, is something that Unity will only call during their predefined events if your class *is* a MonoBehaviour, which you will then extend the methods you need with the proper functionality.
 
-One common mistake to begginers is thinking that everything has to be a MonoBehaviour or inherit from something else. That is very far from the true, and actually a bad practice. For example, if you have a concept or abstraction that only handles data, consider making it a class that doesn't inherit from another class.
+One common mistake to beginners is thinking that everything has to be a MonoBehaviour or inherit from something else. That is very far from the true, and actually a bad practice. For example, if you have a concept or abstraction that only handles data, consider making it a class that doesn't inherit from another class.
 
-## Identation
+## Indentation
 
-At first glance, identation is a simple topic: managing *spaces* inside your code. It is what makes your code more readable by separating different words or symbols with a space, tab, or new line. Understanding the importance of a code with the correct identation is often hard to developers who are new to programming, and the best way I ever found to change that was to show a piece of code with really bad identations. Let's take our script template to a new level (of uglyness):
+At first glance, indentation is a simple topic: managing *spaces* inside your code. It is what makes your code more readable by separating different words or symbols with a space, tab, or new line. Understanding the importance of a code with the correct indentation is often hard to developers who are new to programming, and the best way I ever found to change that was to show a piece of code with really bad indentations. Let's take our script template to a new level (of uglyness):
 
 ```csharp
-// The code below is an example of *bad* identation.
+// The code below is an example of *bad* indentation.
 
 using System.Collections; using System.Collections.Generic;
 using UnityEngine;
@@ -94,7 +94,7 @@ void Start() {
 
 How hard it is for you to read the code above? If you're used to programming in Unity maybe not very much, but it is already more time-consuming to understand what this script does and where each part of the could should be. If we took our approach to a real script, with 50 or 100 lines or code, readability would be absolutely awful.
 
-Many programming languages (C# included) have suggested guidelines or rules on how to properly ident your code, but truly learning it is not an easy task for most people. Luckily for us, there is a tool that will makes this process much easier: auto-formatting. If you're not sure you can handle identation by yourself, let the computer do the job for you and learn it by example. As you're probably using Visual Studio to code, my suggestion is to install the '*Productivity Power Tools*' plugin for Visual Studio and have the "Format document on save" option enabled. If you don't want to (or can't) install it, you can always use the "*Ctrl+K, Ctrl+D*" shortcut to format the currently opened script.
+Many programming languages (C# included) have suggested guidelines or rules on how to properly ident your code, but truly learning it is not an easy task for most people. Luckily for us, there is a tool that will makes this process much easier: auto-formatting. If you're not sure you can handle indentation by yourself, let the computer do the job for you and learn it by example. As you're probably using Visual Studio to code, my suggestion is to install the '*Productivity Power Tools*' plugin for Visual Studio and have the "Format document on save" option enabled. If you don't want to (or can't) install it, you can always use the "*Ctrl+K, Ctrl+D*" shortcut to format the currently opened script.
 
 ## Variables
 
@@ -241,7 +241,7 @@ public bool IsNewHighScore(int _currentScore)
 }
 ```
 
-Keep the structure of your methods clear with a low amount of information inside it. If your method contains more than 10 lines of code, it is probably a good candidate to be split into two or more methods. And finally, returning to the identation topic, follow the structure below for methods:
+Keep the structure of your methods clear with a low amount of information inside it. If your method contains more than 10 lines of code, it is probably a good candidate to be split into two or more methods. And finally, returning to the indentation topic, follow the structure below for methods:
 
 ```csharp
 public void DoSomething()
@@ -321,7 +321,7 @@ for (int i = 0; i < 10; i++)
 }
 ```
 
-The code above is not meant to do something useful in particular, but if you were given the task to understand what this algorithm does, that would be a hard job. The amount of complexity added to the code because of these **nested** statements make their readability and maintainablity really low. And trust me, I've seen worse examples of pieces of code that actually shipped to a real game. As a general rule of thumb, keep your methods with a maximum of one multi-line statement nested inside another multi-line statement. When possible, no nesting or even no multi-line statements at all is desirable.
+The code above is not meant to do something useful in particular, but if you were given the task to understand what this algorithm does, that would be a hard job. The amount of complexity added to the code because of these **nested** statements make their readability and maintainability really low. And trust me, I've seen worse examples of pieces of code that actually shipped to a real game. As a general rule of thumb, keep your methods with a maximum of one multi-line statement nested inside another multi-line statement. When possible, no nesting or even no multi-line statements at all is desirable.
 
 ```csharp
 // Goal
@@ -393,7 +393,7 @@ After declaring what other namespaces this file is using, we create a namespace 
 
 ## Comments
 
-With the honorable objective of helping humans understand the code, comments are an incredible way of documentating your scripts and improving maintainability. They are easy to use, but also easy to use in excess. To increase the quality of your code, here are the simple guidelines to when you should create a comment:
+With the honorable objective of helping humans understand the code, comments are an incredible way of documenting your scripts and improving maintainability. They are easy to use, but also easy to use in excess. To increase the quality of your code, here are the simple guidelines to when you should create a comment:
 
 1) To document a class, method, enum, or struct.
 2) To serve as a header of the file (mainly for a copyright notice).
